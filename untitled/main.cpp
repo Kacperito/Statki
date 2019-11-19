@@ -2,10 +2,12 @@
 #include <time.h>
 #include <cstdlib>
 
+
+
 using namespace std;
-int tab[10][10];
 void wodowanie(int o);
 void bariera();
+int tab[10][10];
 
 int main()
 {
@@ -14,6 +16,7 @@ int main()
         for (int j = 0; j < 10; j++)
         {
             tab[i][j] = 0;
+            cout.width(2);
             cout << tab[i][j]<<" ";
         }
         cout<<endl;
@@ -64,39 +67,40 @@ void wodowanie(int o)
     int r, d, a;
 
         start:
+        int l=0;
         r = rand() % 10;
         d = rand() % 10;
         a = rand() % 2 + 1;
         cout << r << " " << d << " " <<a<< endl;
 
-        switch (a) {
-            case 1:
-                if (r + o < 10) {
-                    for (int i = 0; i < o; i++) {
-                        if (tab[r + i][d] == 0)
-                        {
-                            tab[r + i][d] = 7;
-                        cout << "siemson" << endl;
-                    }
-                        else goto start;
-                    }
+    if (a==1) {
+        if (r + o < 10) {
+            for (int i = 0; i < o; i++) {
+                if (tab[r + i][d] == 0) {
+                    l++;
+                    cout << l << endl;
+                } else
+                    goto start;
+            }
+                for (int i = 0; i < o; i++)
+                    tab[r + i][d] = 7;
 
-                    break;
+        }
+        else goto start;
+    }
+    else if (a==2){
+            if (d + o < 10) {
+                for (int i = 0; i < o; i++) {
+                    if (tab[r][d + i] == 0) {
+                        l++;
+                        cout<<l<<endl;
+                    } else goto start;
                 }
-                else goto start;
-            case 2:
-                if (d + o < 10) {
-                    for (int i = 0; i < o; i++) {
-                        if (tab[r][d + i] == 0) {
-                            tab[r][d + i] = 7;
-                            cout << "siemson" << endl;
-                        }
-                        else goto start;
-                    }
-                    break;
-                }
-                else goto start;
+                    for (int i = 0; i < o; i++)
+                        tab[r][d + i] = 7;
 
+            }
+            else goto start;
         }
 }
 
