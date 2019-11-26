@@ -1,8 +1,7 @@
 #include <iostream>
 #include <time.h>
 #include <cstdlib>
-
-
+#include <conio.h>
 
 using namespace std;
 void wodowanie(int o);
@@ -14,7 +13,8 @@ void sprawdzaczbat();
 void sprawdzacztab();
 int tab[10][10];
 int bat[10][10];
-int x, y;
+int  y, x, rama2;
+char rama;
 int  a, b;
 int win=0;
 
@@ -78,18 +78,55 @@ int main()
     }
     //cout<<"done 1"<<endl;
 
+
+
+    cout<<"open fire"<<endl;
+    srand(time(NULL));
+while (true)
+{
     wyswietlacz();
 
-
-    cout<<"zacznij strzelac"<<endl;
-    srand(time(NULL));
-int lose=0;
-while (lose==0)
-{
+    cout<<"wprowadz litere wiersza:";
     start2:
-    cin >> x >> y;
-    x--;
-    y--;
+    rama=getch();
+        if(rama== 'a' || rama=='A')
+            x=1;
+        else if(rama== 'b' || rama=='B')
+            x=2;
+        else if(rama== 'c' || rama=='C')
+            x=3;
+        else if(rama== 'd' || rama=='D')
+            x=4;
+        else if(rama== 'e' || rama=='E')
+            x=5;
+        else if(rama== 'f' || rama=='F')
+            x=6;
+        else if(rama== 'g' || rama=='G')
+            x=7;
+        else if(rama== 'h' || rama=='H')
+            x=8;
+        else if(rama== 'i' || rama=='I')
+            x=9;
+        else if(rama== 'j' || rama=='J')
+            x=10;
+        else {
+            cout << "wprowadz poprawna litere mordo" << endl;
+            goto start2;
+        }
+        cout<<"wprowadz liczbe kolumny:";
+        start7:
+        while((cin>>rama2))
+        {
+            if(rama2<0 || rama2>11) {
+                cout << "liczbe z zakresu byq" << endl;
+                goto start7;
+            }
+            else
+                y=rama2;
+        }
+        cout<<y<<endl;
+        x--;
+        y--;
 
     if (bat[x][y] == 7) {
         cout << "essa" << endl;
@@ -124,7 +161,7 @@ while (lose==0)
     if (win == 0)
         return 0;
 
-    wyswietlacz();
+    //system("cls");
 }
 
 
@@ -271,7 +308,7 @@ void bariera() {
 
     void wyswietlacz()
     {
-        for (int i = 0; i < 10; i++)
+       /* for (int i = 0; i < 10; i++)
         {
             for (int j = 0; j < 10; j++)
             {
@@ -283,9 +320,50 @@ void bariera() {
             cout << endl;
         }
         cout<<endl;
+        */
+       int ramy[11];
+        //system ("cls");
+        for (int i = 0; i < 11; i++) {
+            ramy[i] = i;
+            cout << ramy[i] << "  ";
+        }
+        cout<<endl;
 
         for (int i = 0; i < 10; i++)
         {
+            switch (i)
+            {
+                case 0:
+                    cout<< "A"<<" ";
+                    break;
+                case 1:
+                    cout<< "B"<<" ";
+                    break;
+                case 2:
+                    cout<< "C"<<" ";
+                    break;
+                case 3:
+                    cout<< "D"<<" ";
+                    break;
+                case 4:
+                    cout<< "E"<<" ";
+                    break;
+                case 5:
+                    cout<< "F"<<" ";
+                    break;
+                case 6:
+                    cout<< "G"<<" ";
+                    break;
+                case 7:
+                    cout<< "H"<<" ";
+                    break;
+                case 8:
+                    cout<< "I"<<" ";
+                    break;
+                case 9:
+                    cout<< "J"<<" ";
+                    break;
+            }
             for (int j = 0; j < 10; j++)
             {
                 cout.width(2);
@@ -316,8 +394,46 @@ void bariera() {
 
         cout<<endl<<endl;
 
+        for (int i = 0; i < 11; i++) {
+            cout << ramy[i] << "  ";
+        }
+        cout<<endl;
+
         for (int i = 0; i < 10; i++)
         {
+            switch (i)
+            {
+                case 0:
+                    cout<< "A"<<" ";
+                    break;
+                case 1:
+                    cout<< "B"<<" ";
+                    break;
+                case 2:
+                    cout<< "C"<<" ";
+                    break;
+                case 3:
+                    cout<< "D"<<" ";
+                    break;
+                case 4:
+                    cout<< "E"<<" ";
+                    break;
+                case 5:
+                    cout<< "F"<<" ";
+                    break;
+                case 6:
+                    cout<< "G"<<" ";
+                    break;
+                case 7:
+                    cout<< "H"<<" ";
+                    break;
+                case 8:
+                    cout<< "I"<<" ";
+                    break;
+                case 9:
+                    cout<< "J"<<" ";
+                    break;
+            }
             for (int j = 0; j < 10; j++)
             {
                 cout.width(2);
