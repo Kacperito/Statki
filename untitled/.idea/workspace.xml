@@ -12,11 +12,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdd495a4-0f08-4e81-874b-8faa324d5cf1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/untitled.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/untitled.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masztowce/.vs/masztowce/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../masztowce/.vs/masztowce/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masztowce/.vs/masztowce/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../masztowce/.vs/masztowce/v16/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masztowce/Debug/masztowce.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../masztowce/Debug/masztowce.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masztowce/Debug/masztowce.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/../masztowce/Debug/masztowce.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masztowce/Debug/masztowce.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../masztowce/Debug/masztowce.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masztowce/masztowce/Debug/masztowce.log" beforeDir="false" afterPath="$PROJECT_DIR$/../masztowce/masztowce/Debug/masztowce.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masztowce/masztowce/Debug/masztowce.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/../masztowce/masztowce/Debug/masztowce.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masztowce/masztowce/Debug/vc142.idb" beforeDir="false" afterPath="$PROJECT_DIR$/../masztowce/masztowce/Debug/vc142.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masztowce/masztowce/Debug/vc142.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../masztowce/masztowce/Debug/vc142.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masztowce/masztowce/Debug/Źródło.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../masztowce/masztowce/Debug/Źródło.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../masztowce/masztowce/Źródło.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../masztowce/masztowce/Źródło.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="119" column="37" lean-forward="true" selection-start-line="119" selection-start-column="37" selection-end-line="119" selection-end-column="37" />
+            <state relative-caret-position="485">
+              <caret line="158" column="5" lean-forward="true" selection-start-line="145" selection-start-column="4" selection-end-line="158" selection-end-column="5" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -137,16 +143,17 @@
       <workItem from="1574377868253" duration="11880000" />
       <workItem from="1574525681187" duration="1340000" />
       <workItem from="1574777198085" duration="10292000" />
+      <workItem from="1574883745697" duration="100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42081000" />
+    <option name="totallyTimeSpent" value="42181000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13892618" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1409396" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -180,8 +187,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="119" column="37" lean-forward="true" selection-start-line="119" selection-start-column="37" selection-end-line="119" selection-end-column="37" />
+        <state relative-caret-position="485">
+          <caret line="158" column="5" lean-forward="true" selection-start-line="145" selection-start-column="4" selection-end-line="158" selection-end-column="5" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
