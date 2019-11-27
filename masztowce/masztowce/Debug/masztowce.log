@@ -1,5 +1,5 @@
 ﻿  Źródło.cpp
-C:\Users\kacpe\Desktop\masztowce\masztowce\masztowce\Źródło.cpp(76,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-C:\Users\kacpe\Desktop\masztowce\masztowce\masztowce\Źródło.cpp(178,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-C:\Users\kacpe\Desktop\masztowce\masztowce\masztowce\Źródło.cpp(220,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-  masztowce.vcxproj -> C:\Users\kacpe\Desktop\masztowce\masztowce\Debug\masztowce.exe
+C:\Users\kacpe\Desktop\statki\masztowce\masztowce\Źródło.cpp(77,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+C:\Users\kacpe\Desktop\statki\masztowce\masztowce\Źródło.cpp(171,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+C:\Users\kacpe\Desktop\statki\masztowce\masztowce\Źródło.cpp(213,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  masztowce.vcxproj -> C:\Users\kacpe\Desktop\statki\masztowce\Debug\masztowce.exe

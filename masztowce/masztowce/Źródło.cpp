@@ -11,9 +11,10 @@ void bariera2();
 void wyswietlacz();
 void sprawdzaczbat();
 void sprawdzacztab();
+void bot();
 int tab[10][10];
 int bat[10][10];
-int  y, x;
+int  y, x, traf=0, stronyy=0, wystarczy;
 char rama;
 int  a, b;
 int win = 0;
@@ -78,6 +79,12 @@ int main()
 	{
 		wyswietlacz();
 
+		bot();
+
+		sprawdzacztab();
+		if (win == 0)
+			return 0;
+
 		cout << "wprowadz litere wiersza:";
 	start2:
 		rama = _getch();
@@ -138,24 +145,10 @@ int main()
 		if (win == 0)
 			return 0;
 
-	start3:
-		a = rand() % 10;
-		b = rand() % 10;
-		int traf = 0;
 
-		if (tab[a][b] == 7) {
-			tab[a][b] = 6;
-			traf = 1;
-		}
-		else if (tab[a][b] == 0) {
-			tab[a][b] = 8;
-		}
-		else if (tab[a][b] == 6 || tab[a][b] == 8) {
-			goto start3;
-		}
-		sprawdzacztab();
-		if (win == 0)
-			return 0;
+
+
+
 
 		system("cls");
 	}
@@ -483,4 +476,329 @@ void sprawdzaczbat()
 	}
 	if (win == 0)
 		cout << "Victory" << endl;
+}
+
+void bot()
+{
+	if (traf == 3)
+	{
+		switch (stronyy)
+		{
+		case 1:
+			if ((a + traf) >= 10)
+				goto ai1;
+			else if (tab[a + traf][b] == 7) {
+				tab[a + traf][b] = 6;
+				goto ai1;
+			}
+			else if (tab[a + traf][b] == 0) {
+				tab[a + traf][b] = 8;
+			}
+			else if (tab[a + traf][b] == 8 || tab[a + traf][b] == 6) {
+				goto ai1;
+			}
+			break;
+
+		case 2:
+			if ((a - traf) < 0)
+				goto ai1;
+			else if (tab[a - traf][b] == 7) {
+				tab[a - traf][b] = 6;
+				goto ai1;
+			}
+			else if (tab[a - traf][b] == 0) {
+				tab[a - traf][b] = 8;
+			}
+			else if (tab[a - traf][b] == 8 || tab[a - traf][b] == 6) {
+				goto ai1;
+			}
+			break;
+
+		case 3:
+			if ((b + traf) >= 10)
+				goto ai1;
+			else if (tab[a][b + traf] == 7) {
+				tab[a][b + traf] = 6;
+				goto ai1;
+			}
+			else if (tab[a][b + traf] == 0) {
+				tab[a][b + traf] = 8;
+			}
+			else if (tab[a][b + traf] == 8 || tab[a][b + traf] == 6) {
+				goto ai1;
+			}
+			break;
+
+		case 4:
+			if ((b - traf) < 0)
+				goto ai1;
+			else if (tab[a][b - traf] == 7) {
+				tab[a][b - traf] = 6;
+				goto ai1;
+			}
+			else if (tab[a][b - traf] == 0) {
+				tab[a][b - traf] = 8;
+			}
+			else if (tab[a][b - traf] == 8 || tab[a][b - traf] == 6) {
+				goto ai1;
+			}
+			break;
+		}
+	}
+
+	if (traf == 2)
+	{
+		switch (stronyy)
+		{
+		case 1:
+			if ((a + traf) >= 10)
+				goto ai1;
+			else if (tab[a + traf][b] == 7) {
+				tab[a + traf][b] = 6;
+				stronyy = 1;
+				traf++;
+			}
+			else if (tab[a + traf][b] == 0) {
+				tab[a + traf][b] = 8;
+			}
+			else if (tab[a + traf][b] == 8) {
+				goto ai1;
+			}
+			break;
+
+		case 2:
+			if ((a - traf) < 0)
+				goto ai1;
+			else if (tab[a - traf][b] == 7) {
+				tab[a - traf][b] = 6;
+				stronyy = 2;
+				traf++;
+			}
+			else if (tab[a - traf][b] == 0) {
+				tab[a - traf][b] = 8;
+			}
+			else if (tab[a - traf][b] == 8) {
+				goto ai1;
+			}
+			break;
+		
+		case 3:
+			if ((b + traf) >= 10)
+				goto ai1;
+			else if (tab[a][b+traf] == 7) {
+				tab[a][b+traf] = 6;
+				stronyy = 3;
+				traf++;
+			}
+			else if (tab[a][b+traf] == 0) {
+				tab[a][b+traf] = 8;
+			}
+			else if (tab[a][b+traf] == 8) {
+				goto ai1;
+			}
+			break;
+
+		case 4:
+			if ((b - traf) < 0)
+				goto ai1;
+			else if (tab[a][b - traf] == 7) {
+				tab[a][b - traf] = 6;
+				stronyy = 4;
+				traf++;
+			}
+			else if (tab[a][b - traf] == 0) {
+				tab[a][b - traf] = 8;
+			}
+			else if (tab[a][b - traf] == 8) {
+				goto ai1;
+			}
+			break;
+		}
+	}
+
+
+	if (traf == 1)
+	{
+	ai1:
+		traf = 1;
+		wystarczy = 0;
+		if (stronyy == 1 || stronyy == 2)
+		{
+			for (int i = 0; i < 2; i++)
+			{
+				switch (i)
+				{
+				case 0:
+					if (tab[a + traf][b] == 8 || tab[a + traf][b] == 6 || (a + traf) >= 10)
+						wystarczy++;
+					break;
+				case 1:
+					if (tab[a - traf][b] == 8 || tab[a - traf][b] == 6 || (a - traf) < 0)
+						wystarczy++;
+					break;
+				}
+			}
+			if (wystarczy == 2)
+				goto start3;
+		}
+		if (stronyy == 3 || stronyy == 4)
+		{
+			for (int i = 0; i < 2; i++)
+			{
+				switch (i)
+				{
+				case 0:
+					if (tab[a][b + traf] == 8 || tab[a][b + traf] == 6 || (b + traf) >= 10)
+						wystarczy++;
+					break;
+				case 1:
+					if (tab[a][b - traf] == 8 || tab[a][b - traf] == 6 || (b - traf) < 0)
+						wystarczy++;
+					break;
+				}
+			}
+			if (wystarczy == 2)
+				goto start3;
+		}
+		if (stronyy == 0)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				switch (i)
+				{
+				case 0:
+					if (tab[a + traf][b] == 8 || tab[a + traf][b] == 6 || (a + traf) >= 10)
+						wystarczy++;
+					break;
+				case 1:
+					if (tab[a - traf][b] == 8 || tab[a - traf][b] == 6 || (a - traf) < 0)
+						wystarczy++;
+					break;
+				case 2:
+					if (tab[a][b + traf] == 8 || tab[a][b + traf] == 6 || (b + traf) >= 10)
+						wystarczy++;
+					break;
+				case 3:
+					if (tab[a][b - traf] == 8 || tab[a][b - traf] == 6 || (b - traf) < 0)
+						wystarczy++;
+					break;
+				}
+			}
+			if (wystarczy == 4)
+				goto start3;
+		}
+	
+	poza:
+		int strony;
+		switch (stronyy)
+		{
+		case 0:
+			strony = rand() % 4 + 1;
+			break;
+		case 1:
+			strony = 2;
+			break;
+		case 2:
+			strony = 1;
+			break;
+		case 3:
+			strony = 4;
+			break;
+		case 4:
+			strony = 3;
+			break;
+		}
+
+			switch (strony)
+			{
+			case 1:
+				if ((a + traf) >= 10)
+					goto poza;
+				else if (tab[a + traf][b] == 7) {
+					tab[a + traf][b] = 6;
+					stronyy=1;
+					traf++;
+				}
+				else if (tab[a + traf][b] == 0) {
+					tab[a + traf][b] = 8;
+				}
+				else if (tab[a + traf][b] == 6 || tab[a + traf][b] == 8) {
+					goto ai1;
+				}
+				break;
+
+			case 2:
+				if ((a - traf) < 0)
+					goto poza;
+				else if (tab[a - traf][b] == 7) {
+					tab[a - traf][b] = 6;
+					stronyy=2;
+					traf++;
+				}
+				else if (tab[a - traf][b] == 0) {
+					tab[a - traf][b] = 8;
+				}
+				else if (tab[a - traf][b] == 6 || tab[a - traf][b] == 8) {
+					goto ai1;
+				}
+				break;
+
+			case 3:
+				if ((b + traf) >= 10)
+					goto poza;
+				else if (tab[a][b + traf] == 7) {
+					tab[a][b + traf] = 6;
+					stronyy=3;
+					traf++;
+				}
+				else if (tab[a][b + traf] == 0) {
+					tab[a][b + traf] = 8;
+				}
+				else if (tab[a][b + traf] == 6 || tab[a][b + traf] == 8) {
+					goto ai1;
+				}
+				break;
+
+			case 4:
+				if ((b - traf) < 0)
+					goto poza;
+				else if (tab[a][b - traf] == 7) {
+					tab[a][b - traf] = 6;
+					stronyy=4;
+					traf++;
+				}
+				else if (tab[a][b - traf] == 0) {
+					tab[a][b - traf] = 8;
+				}
+				else if (tab[a][b - traf] == 6 || tab[a][b - traf] == 8) {
+					goto ai1;
+				}
+				break;
+
+			}
+		
+	}
+	if (traf == 0)
+	{
+	start3:
+		stronyy = 0;
+		a = rand() % 10;
+		b = rand() % 10;
+		traf = 0;
+
+		if (tab[a][b] == 7) {
+			tab[a][b] = 6;
+			traf = 1;
+		}
+		else if (tab[a][b] == 0) {
+			tab[a][b] = 8;
+		}
+		else if (tab[a][b] == 6 || tab[a][b] == 8) {
+			goto start3;
+		}
+	}
+
+
+	cout << a << b << endl;
+
 }
