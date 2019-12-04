@@ -473,7 +473,7 @@ void wyswietlacz()
 				cout << tab[i][j] << " ";
 				break;
 			case 4:
-				cout << "0" << " ";
+				cout << "4" << " ";
 				break;
 			case 7:
 				cout << tab[i][j] << " ";
