@@ -1,5 +1,5 @@
 ﻿  Źródło1.cpp
-C:\Users\kacpe\Desktop\yaht\yaht\Źródło1.cpp(103,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-C:\Users\kacpe\Desktop\yaht\yaht\Źródło1.cpp(197,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-C:\Users\kacpe\Desktop\yaht\yaht\Źródło1.cpp(239,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
-  yaht.vcxproj -> C:\Users\kacpe\Desktop\yaht\Debug\yaht.exe
+C:\Users\kacpe\Desktop\statki\yaht\yaht\Źródło1.cpp(103,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+C:\Users\kacpe\Desktop\statki\yaht\yaht\Źródło1.cpp(196,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+C:\Users\kacpe\Desktop\statki\yaht\yaht\Źródło1.cpp(238,12): warning C4244: "argument": konwersja z "time_t" do "unsigned int", możliwa utrata danych
+  yaht.vcxproj -> C:\Users\kacpe\Desktop\statki\yaht\Debug\yaht.exe

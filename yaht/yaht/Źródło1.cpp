@@ -104,7 +104,6 @@ poziomek:
 	while (true)
 	{
 		wyswietlacz();
-		cout << traf << endl << tr<<endl<<"4:"<<m4<<endl<<"3:"<<m3<<endl<<"2:"<<m2<<endl;
 
 		cout << "wprowadz litere wiersza:";
 	start2:
@@ -477,7 +476,7 @@ void wyswietlacz()
 				cout << tab[i][j] << " ";
 				break;
 			case 4:
-				cout << "4" << " ";
+				cout << "0" << " ";
 				break;
 			case 7:
 				cout << tab[i][j] << " ";
