@@ -25,7 +25,7 @@ char rama;
 int tr=0;
 int  a, b;
 int win = 0;
-
+HANDLE color = GetStdHandle(STD_OUTPUT_HANDLE);
 
 int main()
 {
@@ -98,12 +98,11 @@ poziomek:
 	cout << '\n' << '\n' << '\n' << '\n' << "        powodzenia marynarzu" << endl;
 	Sleep(2000);
 	system("cls");
-
+	wyswietlacz();
 
 	srand(time(NULL));
 	while (true)
 	{
-		wyswietlacz();
 
 		cout << "wprowadz litere wiersza:";
 	start2:
@@ -161,12 +160,12 @@ poziomek:
 			cout << "wariacie juz tu strzelales" << endl;
 			goto start2;
 		}
+		system("cls");
+		wyswietlacz();
 		sprawdzaczbat();
 		if (win == 0)
 			return 0;
 
-		system("cls");
-		wyswietlacz();
 		Sleep(1000);
 
 		if (poziomki == 1)
@@ -186,6 +185,7 @@ poziomek:
 		}
 
 		system("cls");
+		wyswietlacz();
 	}
 
 	return 0;
@@ -354,12 +354,14 @@ void wyswietlacz()
 	int ramy[11];
 	for (int i = 0; i < 11; i++) {
 		ramy[i] = i;
+		SetConsoleTextAttribute(color, 14);
 		cout << ramy[i] << "  ";
 	}
 	cout << endl;
 
 	for (int i = 0; i < 10; i++)
 	{
+		SetConsoleTextAttribute(color, 14);
 		switch (i)
 		{
 		case 0:
@@ -393,6 +395,7 @@ void wyswietlacz()
 			cout << "J" << " ";
 			break;
 		}
+		SetConsoleTextAttribute(color, 15);
 		for (int j = 0; j < 10; j++)
 		{
 			cout.width(2);
@@ -409,7 +412,9 @@ void wyswietlacz()
 				cout << "0" << " ";
 				break;
 			case 6:
+				SetConsoleTextAttribute(color, 11);
 				cout << "+" << " ";
+				SetConsoleTextAttribute(color, 15);
 				break;
 			case 8:
 				cout << "-" << " ";
@@ -424,12 +429,13 @@ void wyswietlacz()
 	cout << endl << endl;
 
 	for (int i = 0; i < 11; i++) {
+		SetConsoleTextAttribute(color, 14);
 		cout << ramy[i] << "  ";
 	}
 	cout << endl;
-
 	for (int i = 0; i < 10; i++)
 	{
+		SetConsoleTextAttribute(color, 14);
 		switch (i)
 		{
 		case 0:
@@ -463,6 +469,7 @@ void wyswietlacz()
 			cout << "J" << " ";
 			break;
 		}
+		SetConsoleTextAttribute(color, 15);
 		for (int j = 0; j < 10; j++)
 		{
 			cout.width(2);
@@ -479,10 +486,14 @@ void wyswietlacz()
 				cout << "0" << " ";
 				break;
 			case 7:
+				SetConsoleTextAttribute(color, 11);
 				cout << tab[i][j] << " ";
+				SetConsoleTextAttribute(color, 15);
 				break;
 			case 6:
+				SetConsoleTextAttribute(color, 12);
 				cout << "+" << " ";
+				SetConsoleTextAttribute(color, 15);
 				break;
 			case 8:
 				cout << "-" << " ";
@@ -491,7 +502,7 @@ void wyswietlacz()
 		}
 		cout << endl;
 	}
-
+	SetConsoleTextAttribute(color, 15);
 }
 
 
