@@ -15,6 +15,7 @@ void sprawdzaczbat();
 void sprawdzacztab();
 void bot();
 void bot2();
+int otwarte = 0;
 int tab[10][10];
 int bat[10][10];
 int m4 = 0;
@@ -80,8 +81,17 @@ int main()
 	char poziom;
 	int poziomki;
 
+	cout << '\n' << '\n' << '\n';
+	cout << "      " << char(218) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(191) << endl;
+	cout << "      " << char(179) <<"> S T A T K I <" << char(179)<<endl;
+	cout << "      " << char(192) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(196) << char(217) << endl;
+	Sleep(2000);
+	system("cls");
+
+siemanko:
+	system("cls");
 	cout << "Siemanko, witam w moich statkach!" << '\n' << "wybierz poziom trudnosci" << endl;
-	cout << "1 - Dziecko we mgle" << '\n' << "2 - prawie ai" << endl;
+	cout << "1 - Dziecko we mgle" << '\n' << "2 - prawie ai" <<'\n' << "3 - 'na sucho'" << endl;
 
 poziomek:
 	poziom = _getch();
@@ -89,6 +99,19 @@ poziomek:
 		poziomki = 1;
 	else if (poziom == '2')
 		poziomki = 2;
+	else if (poziom == '3')
+	{
+		cout << "Liczby '7' odzwierciedlaja Twoja (miejmy nadzieje szczesliwa) flote." << endl;
+		cout << "Znak '+' oznacza trafienie" << endl;
+		cout << "Znak '-' oznacza pudlo" << endl;
+		cout << "Zera - '0' to niezmierzony przestwor oceanu" << endl;
+		cout << "Na gorze znajduje sie Twoj przeciwnik" << endl;
+		cout << "Na dole Ty" << endl;
+		cout << "Caly na bialo" << endl << endl << endl << endl;
+		cout << "Press enter to continue" << endl;
+		getchar();
+		goto siemanko;
+	}
 	else
 	{
 		cout << "nawet nie probuj byq" << endl;
@@ -409,6 +432,13 @@ void wyswietlacz()
 				cout << bat[i][j] << " ";
 				break;
 			case 7:
+				if (otwarte == 1)
+				{
+					SetConsoleTextAttribute(color, 12);
+					cout << "7" << " ";
+					SetConsoleTextAttribute(color, 15);
+				}
+				else
 				cout << "0" << " ";
 				break;
 			case 6:
@@ -517,7 +547,12 @@ void sprawdzacztab() {
 		}
 	}
 	if (win == 0)
+	{
+		otwarte = 1;
+		system("cls");
+		wyswietlacz();
 		cout << "defeat" << endl;
+	}
 }
 
 void sprawdzaczbat()
@@ -532,7 +567,12 @@ void sprawdzaczbat()
 		}
 	}
 	if (win == 0)
+	{
+		otwarte = 1;
+		system("cls");
+		wyswietlacz();
 		cout << "Victory" << endl;
+	}
 }
 
 void bot()
